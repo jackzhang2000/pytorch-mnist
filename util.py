@@ -1,16 +1,14 @@
-import numpy as np
 import struct
-from torch.utils.data import Dataset
-from torchvision.datasets import VisionDataset
-from torchvision import transforms
-from torch import Tensor
+
 import torch
 from PIL import Image
+from torchvision.datasets import VisionDataset
 
 train_image_p = 'data/train-images.idx3-ubyte'
 train_label_p = 'data/train-labels.idx1-ubyte'
 t10k_image_p = 'data/t10k-images.idx3-ubyte'
 t10k_label_p = 'data/t10k-labels.idx1-ubyte'
+
 
 class MNISTDataSet(VisionDataset):
     def __init__(self, root, train=True, transform=None, target_transform=None):
